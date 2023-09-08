@@ -18,6 +18,22 @@ public class PieceWorkerEmployee {
     private float ratePerPiece;
     
     //3 consttructors
+    public PieceWorkerEmployee() {
+    }
+
+    public PieceWorkerEmployee(String empName, String empBirthDate) {
+        this.empName = empName;
+        this.empBirthDate = empBirthDate;
+    }
+
+    public PieceWorkerEmployee(int empID, String empName, String empDateHired, String empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+        this.empID = empID;
+        this.empName = empName;
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+        this.totalPiecesFinished = totalPiecesFinished;
+        this.ratePerPiece = ratePerPiece;
+    }
 
     public int getEmpID() {
         return empID;

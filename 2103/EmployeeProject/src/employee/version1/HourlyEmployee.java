@@ -23,8 +23,11 @@ public class HourlyEmployee {
     public HourlyEmployee() {
         
     }
-    
-    
+
+    public HourlyEmployee(String empName, String empBirthDate) {
+        this.empName = empName;
+        this.empBirthDate = empBirthDate;
+    }
 
     public HourlyEmployee(int empID, String empName, String empDateHired, String empBirthDate, float totalHoursWorked, float ratePerHour) {
         this.empID = empID;
