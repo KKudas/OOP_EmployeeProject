@@ -86,7 +86,7 @@ public class HourlyEmployee {
     
     
     
-    public double computeSalary(double salary){
+    public double computeSalary(){
         double excessHoursTotal;
         
         if(this.totalHoursWorked > 40){
