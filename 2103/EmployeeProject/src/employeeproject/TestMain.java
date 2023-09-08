@@ -23,5 +23,8 @@ public class TestMain {
 
         double salaryOfEmployee1 = employee1.computeSalary();
         System.out.println("Employee 1 Salary is: " + salaryOfEmployee1);
+
+        double salaryOfEmployee2 = employee2.computeSalary();
+        System.out.println("Employee 2 Salary is: " + salaryOfEmployee2);
     }
 }

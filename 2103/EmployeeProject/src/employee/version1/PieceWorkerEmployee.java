@@ -83,7 +83,7 @@ public class PieceWorkerEmployee {
         this.ratePerPiece = ratePerPiece;
     }
     
-    public double computeSalary(double salary){
+    public double computeSalary(){
         int excessPiecesTotal;
         if(this.totalPiecesFinished > 100){
             excessPiecesTotal = this.totalPiecesFinished - 100;
@@ -94,8 +94,14 @@ public class PieceWorkerEmployee {
         }
     }
     
-    public void displayInfo(){
-        //display all w/salary
+    public void displayInfo(double salary){
+        System.out.println("Employee ID: " + this.empID);
+        System.out.println("Employee Name: " + this.empName);
+        System.out.println("Date Hired: " + this.empDateHired);
+        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Total Pieces Finished: " + this.totalPiecesFinished);
+        System.out.println("Rate Per Hour: " + this.ratePerPiece);
+        System.out.println("Salary: " + salary);
     }
 
     @Override

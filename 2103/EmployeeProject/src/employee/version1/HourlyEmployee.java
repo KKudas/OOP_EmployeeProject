@@ -100,8 +100,14 @@ public class HourlyEmployee {
         }
     }
     
-    public void displayInfo(){   
-        
+    public void displayInfo(double salary){
+        System.out.println("Employee ID: " + this.empID);
+        System.out.println("Employee Name: " + this.empName);
+        System.out.println("Date Hired: " + this.empDateHired);
+        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Total Hours Worked: " + this.totalHoursWorked);
+        System.out.println("Rate Per Hour: " + this.ratePerHour);
+        System.out.println("Salary: " + salary);
     }//display all w/salary
 
     @Override

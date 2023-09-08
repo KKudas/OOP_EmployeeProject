@@ -18,6 +18,22 @@ public class CommissionEmployee {
     
     //3 constructors
 
+    public CommissionEmployee() {
+    }
+
+    public CommissionEmployee(String empName, String empBirthDate) {
+        this.empName = empName;
+        this.empBirthDate = empBirthDate;
+    }
+
+    public CommissionEmployee(int empID, String empName, String empDateHired, String empBirthDate, double totalSales) {
+        this.empID = empID;
+        this.empName = empName;
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+        this.totalSales = totalSales;
+    }
+
     public int getEmpID() {
         return empID;
     }
@@ -76,8 +92,13 @@ public class CommissionEmployee {
         }
     }
     
-    public void displayInfo(){
-        
+    public void displayInfo(double salary){
+        System.out.println("Employee ID: " + this.empID);
+        System.out.println("Employee Name: " + this.empName);
+        System.out.println("Date Hired: " + this.empDateHired);
+        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Total Sales: " + this.totalSales);
+        System.out.println("Salary: " + salary);
     }
 
     @Override
