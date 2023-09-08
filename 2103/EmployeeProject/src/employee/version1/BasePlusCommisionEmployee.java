@@ -17,6 +17,21 @@ public class BasePlusCommisionEmployee {
     private double baseSalary;
     
     //3 constructor
+    public BasePlusCommisionEmployee() {
+    }
+
+    public BasePlusCommisionEmployee(String empName, String empBirthDate) {
+        this.empName = empName;
+        this.empBirthDate = empBirthDate;
+    }
+
+    public BasePlusCommisionEmployee(int empID, String empName, String empDateHired, String empBirthDate, double baseSalary) {
+        this.empID = empID;
+        this.empName = empName;
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+        this.baseSalary = baseSalary;
+    }
 
     public int getEmpID() {
         return empID;
@@ -34,7 +49,7 @@ public class BasePlusCommisionEmployee {
         this.empName = empName;
     }
 
-    public String getEmpDateHired() {
+    public String   getEmpDateHired() {
         return empDateHired;
     }
 
@@ -57,13 +72,21 @@ public class BasePlusCommisionEmployee {
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
     }
-    
-    public double computeSalary(double dummyDeleteAfter){
-        return dummyDeleteAfter;
+
+                                //function to call commission employee
+    public double computeSalary(double salary, double excessFunds){
+        CommissionEmployee temp = new CommissionEmployee();
+        return salary + temp.computeSalary(excessFunds);
     }
-    
-    public void displayInfo(){
-        
+
+
+    public void displayInfo(double salary){
+        System.out.println("Employee ID: " + this.empID);
+        System.out.println("Employee Name: " + this.empName);
+        System.out.println("Date Hired: " + this.empDateHired);
+        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Base Salary: " + this.baseSalary);
+        System.out.println("Salary: " + salary);
     }
 
     @Override
