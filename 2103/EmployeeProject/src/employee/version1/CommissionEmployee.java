@@ -5,36 +5,18 @@
  */
 package employee.version1;
 
-
 /**
  *
  * @author User
  */
-public class HourlyEmployee {
+public class CommissionEmployee {
     private int empID;
     private String empName;
     private String empDateHired; //date datatype siya... DD/MM/YYYY
     private String empBirthDate; //date datatype siya...
-    private float totalHoursWorked;
-    private float ratePerHour; //salary 1
+    private double totalSales;
     
-    //3 cosntructors di pa sure ang mga dates
-    
-    public HourlyEmployee() {
-        
-    }
-    
-    
-
-    public HourlyEmployee(int empID, String empName, String empDateHired, String empBirthDate, float totalHoursWorked, float ratePerHour) {
-        this.empID = empID;
-        this.empName = empName;
-        this.empDateHired = empDateHired;
-        this.empBirthDate = empBirthDate;
-        this.totalHoursWorked = totalHoursWorked; 
-        this.ratePerHour = ratePerHour; //76.25/hr
-    }
-    
+    //3 constructors
 
     public int getEmpID() {
         return empID;
@@ -68,42 +50,39 @@ public class HourlyEmployee {
         this.empBirthDate = empBirthDate;
     }
 
-    public float getTotalHoursWorked() {
-        return totalHoursWorked;
+    public double getTotalSales() {
+        return totalSales;
     }
 
-    public void setTotalHoursWorked(float totalHoursWorked) {
-        this.totalHoursWorked = totalHoursWorked;
-    }
-
-    public float getRatePerHour() {
-        return ratePerHour;
-    }
-
-    public void setRatePerHour(float ratePerHour) {
-        this.ratePerHour = ratePerHour;
+    public void setTotalSales(double totalSales) {
+        this.totalSales = totalSales;
     }
     
-    
-    
-    public double computeSalary(){
-        double excessHoursTotal;
-        
-        if(this.totalHoursWorked > 40){
-            excessHoursTotal = (this.totalHoursWorked - 40) * (1.5 * this.ratePerHour); // 8 hrs * 5 perWeek = 40hrs/week
-            return excessHoursTotal + (40 * this.ratePerHour);
+    public double computeSalary(double totalSalary){
+        //RATE
+        //              INCREASE|CONDITION
+        //LOW SALES:        5%  | < 50k
+        //TYPICAL SALES:    20% | >= 50k but < 100k
+        //                  30% | >= 100k but < 0.5M
+        //HIGH SALES:       50% | >= 0.5M
+        if (this.totalSales < 50000){
+            return 0.5 * this.totalSales;
+        } else if (this.totalSales >= 50000 && this.totalSales < 100000){
+            return 0.20 * this.totalSales;
+        } else if (this.totalSales >= 100000 && this.totalSales < 500000){
+            return 0.30 * this.totalSales;
         } else {
-            return this.totalHoursWorked * this.ratePerHour;
+            return 0.50 * this.totalSales;
         }
     }
     
-    public void displayInfo(){   
+    public void displayInfo(){
         
-    }//display all w/salary
+    }
 
     @Override
     public String toString() {
-        return "HourlyEmployee{" + "empID=" + empID + ", empName=" + empName + ", empDateHired=" + empDateHired + ", empBirthDate=" + empBirthDate + ", totalHoursWorked=" + totalHoursWorked + ", ratePerHour=" + ratePerHour + '}';
+        return "CommissionEmployee{" + "empID=" + empID + ", empName=" + empName + ", empDateHired=" + empDateHired + ", empBirthDate=" + empBirthDate + ", totalSales=" + totalSales + '}';
     }
     
     
