@@ -74,7 +74,7 @@ public class CommissionEmployee {
         this.totalSales = totalSales;
     }
     
-    public double computeSalary(double totalSalary){
+    public double computeSalary(){
         //RATE
         //              INCREASE|CONDITION
         //LOW SALES:        5%  | < 50k

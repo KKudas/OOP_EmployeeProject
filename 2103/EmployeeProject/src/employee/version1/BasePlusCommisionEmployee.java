@@ -14,6 +14,7 @@ public class BasePlusCommisionEmployee {
     private String empName;
     private String empDateHired; //date datatype siya... DD/MM/YYYY
     private String empBirthDate; //date datatype siya...
+    private double totalSales;
     private double baseSalary;
     
     //3 constructor
@@ -25,12 +26,21 @@ public class BasePlusCommisionEmployee {
         this.empBirthDate = empBirthDate;
     }
 
-    public BasePlusCommisionEmployee(int empID, String empName, String empDateHired, String empBirthDate, double baseSalary) {
+    public BasePlusCommisionEmployee(int empID, String empName, String empDateHired, String empBirthDate, double baseSalary, double totalSales) {
         this.empID = empID;
         this.empName = empName;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.baseSalary = baseSalary;
+        this.totalSales = totalSales;
+    }
+
+    public double getTotalSales() {
+        return totalSales;
+    }
+
+    public void setTotalSales(double totalSales) {
+        this.totalSales = totalSales;
     }
 
     public int getEmpID() {
@@ -74,9 +84,18 @@ public class BasePlusCommisionEmployee {
     }
 
                                 //function to call commission employee
-    public double computeSalary(double salary, double excessFunds){
-        CommissionEmployee temp = new CommissionEmployee();
-        return salary + temp.computeSalary(excessFunds);
+    public double computeSalary(){
+        double total;
+        if (this.totalSales < 50000){
+            total =  0.5 * this.totalSales;
+        } else if (this.totalSales >= 50000 && this.totalSales < 100000){
+            total = 0.20 * this.totalSales;
+        } else if (this.totalSales >= 100000 && this.totalSales < 500000){
+            total = 0.30 * this.totalSales;
+        } else {
+            total = 0.50 * this.totalSales;
+        }
+        return total + baseSalary;
     }
 
 

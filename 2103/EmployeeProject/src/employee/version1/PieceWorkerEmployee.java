@@ -84,11 +84,10 @@ public class PieceWorkerEmployee {
     }
     
     public double computeSalary(){
-        int excessPiecesTotal;
+        int excessPieces;
         if(this.totalPiecesFinished > 100){
-            excessPiecesTotal = this.totalPiecesFinished - 100;
-            excessPiecesTotal /= 100;
-            return (excessPiecesTotal * 10) + (100 * this.ratePerPiece);
+            excessPieces = this.totalPiecesFinished / 100;
+            return (excessPieces * 10) + (this.totalPiecesFinished * this.ratePerPiece);
         } else {
             return this.totalPiecesFinished * this.ratePerPiece;
         }
