@@ -2,7 +2,9 @@
 <b>Package: </b> employee.version1 <br />
 
 <h2>HourlyEmployee</h2>
-- empID: int <br />
+<ul>
+  <li>empID: int</li>
+</ul>
 - empName: String <br />
 - empDateHired: Date <br />
 - empBirthDate: Date <br />
