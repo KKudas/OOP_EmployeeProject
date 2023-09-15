@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package employee.version1;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -12,8 +14,8 @@ package employee.version1;
 public class PieceWorkerEmployee {
     private int empID;
     private String empName;
-    private String empDateHired; //date datatype siya... DD/MM/YYYY
-    private String empBirthDate; //date datatype siya...
+    EmployeeDate empBirthDate = new EmployeeDate();
+    EmployeeDate empHiredDate = new EmployeeDate();
     private int totalPiecesFinished;
     private float ratePerPiece;
     
@@ -21,16 +23,16 @@ public class PieceWorkerEmployee {
     public PieceWorkerEmployee() {
     }
 
-    public PieceWorkerEmployee(String empName, String empBirthDate) {
+    public PieceWorkerEmployee(String empName, String BirthDate) {
         this.empName = empName;
-        this.empBirthDate = empBirthDate;
+        empBirthDate.arrangeBirthDate(BirthDate);
     }
 
-    public PieceWorkerEmployee(int empID, String empName, String empDateHired, String empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+    public PieceWorkerEmployee(int empID, String empName, String DateHired, String BirthDate, int totalPiecesFinished, float ratePerPiece) {
         this.empID = empID;
         this.empName = empName;
-        this.empDateHired = empDateHired;
-        this.empBirthDate = empBirthDate;
+        empHiredDate.arrangeHiredDate(DateHired);
+        empBirthDate.arrangeBirthDate(BirthDate);
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
     }
@@ -49,22 +51,6 @@ public class PieceWorkerEmployee {
 
     public void setEmpName(String empName) {
         this.empName = empName;
-    }
-
-    public String getEmpDateHired() {
-        return empDateHired;
-    }
-
-    public void setEmpDateHired(String empDateHired) {
-        this.empDateHired = empDateHired;
-    }
-
-    public String getEmpBirthDate() {
-        return empBirthDate;
-    }
-
-    public void setEmpBirthDate(String empBirthDate) {
-        this.empBirthDate = empBirthDate;
     }
 
     public int getTotalPiecesFinished() {
@@ -96,17 +82,13 @@ public class PieceWorkerEmployee {
     public void displayInfo(double salary){
         System.out.println("Employee ID: " + this.empID);
         System.out.println("Employee Name: " + this.empName);
-        System.out.println("Date Hired: " + this.empDateHired);
-        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Date Hired: " + empHiredDate.getEmpHiredDate());
+        System.out.println("Birth Date: " + empBirthDate.getEmpBirthDate());
         System.out.println("Total Pieces Finished: " + this.totalPiecesFinished);
         System.out.println("Rate Per Hour: " + this.ratePerPiece);
         System.out.println("Salary: " + salary);
     }
+    
 
-    @Override
-    public String toString() {
-        return "PieceWorkerEmployee{" + "empID=" + empID + ", empName=" + empName + ", empDateHired=" + empDateHired + ", empBirthDate=" + empBirthDate + ", totalPiecesFinished=" + totalPiecesFinished + ", ratePerPiece=" + ratePerPiece + '}';
-    }
-    
-    
+        
 }
