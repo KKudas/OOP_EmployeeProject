@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package employee.version1;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -12,8 +14,8 @@ package employee.version1;
 public class CommissionEmployee {
     private int empID;
     private String empName;
-    private String empDateHired; //date datatype siya... DD/MM/YYYY
-    private String empBirthDate; //date datatype siya...
+    EmployeeDate empBirthDate = new EmployeeDate();
+    EmployeeDate empHiredDate = new EmployeeDate();
     private double totalSales;
     
     //3 constructors
@@ -21,16 +23,16 @@ public class CommissionEmployee {
     public CommissionEmployee() {
     }
 
-    public CommissionEmployee(String empName, String empBirthDate) {
+    public CommissionEmployee(String empName, String BirthDate) {
         this.empName = empName;
-        this.empBirthDate = empBirthDate;
+        empBirthDate.arrangeBirthDate(BirthDate);
     }
 
-    public CommissionEmployee(int empID, String empName, String empDateHired, String empBirthDate, double totalSales) {
+    public CommissionEmployee(int empID, String empName, String DateHired, String BirthDate, double totalSales) {
         this.empID = empID;
         this.empName = empName;
-        this.empDateHired = empDateHired;
-        this.empBirthDate = empBirthDate;
+        empHiredDate.arrangeHiredDate(DateHired);
+        empBirthDate.arrangeBirthDate(BirthDate);
         this.totalSales = totalSales;
     }
 
@@ -48,22 +50,6 @@ public class CommissionEmployee {
 
     public void setEmpName(String empName) {
         this.empName = empName;
-    }
-
-    public String getEmpDateHired() {
-        return empDateHired;
-    }
-
-    public void setEmpDateHired(String empDateHired) {
-        this.empDateHired = empDateHired;
-    }
-
-    public String getEmpBirthDate() {
-        return empBirthDate;
-    }
-
-    public void setEmpBirthDate(String empBirthDate) {
-        this.empBirthDate = empBirthDate;
     }
 
     public double getTotalSales() {
@@ -95,16 +81,10 @@ public class CommissionEmployee {
     public void displayInfo(double salary){
         System.out.println("Employee ID: " + this.empID);
         System.out.println("Employee Name: " + this.empName);
-        System.out.println("Date Hired: " + this.empDateHired);
-        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Date Hired: " + empHiredDate.getEmpHiredDate());
+        System.out.println("Birth Date: " + empBirthDate.getEmpBirthDate());
         System.out.println("Total Sales: " + this.totalSales);
         System.out.println("Salary: " + salary);
     }
-
-    @Override
-    public String toString() {
-        return "CommissionEmployee{" + "empID=" + empID + ", empName=" + empName + ", empDateHired=" + empDateHired + ", empBirthDate=" + empBirthDate + ", totalSales=" + totalSales + '}';
-    }
-    
-    
+   
 }
