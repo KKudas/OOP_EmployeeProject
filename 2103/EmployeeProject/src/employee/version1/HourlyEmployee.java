@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package employee.version1;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 /**
@@ -13,8 +15,8 @@ package employee.version1;
 public class HourlyEmployee {
     private int empID;
     private String empName;
-    private String empDateHired; //date datatype siya... DD/MM/YYYY
-    private String empBirthDate; //date datatype siya...
+    EmployeeDate empBirthDate = new EmployeeDate();
+    EmployeeDate empHiredDate = new EmployeeDate();
     private float totalHoursWorked;
     private float ratePerHour; //salary 1
     
@@ -24,16 +26,16 @@ public class HourlyEmployee {
         
     }
 
-    public HourlyEmployee(String empName, String empBirthDate) {
+    public HourlyEmployee(String empName, String BirthDate) {
         this.empName = empName;
-        this.empBirthDate = empBirthDate;
+        empBirthDate.arrangeBirthDate(BirthDate);
     }
 
-    public HourlyEmployee(int empID, String empName, String empDateHired, String empBirthDate, float totalHoursWorked, float ratePerHour) {
+    public HourlyEmployee(int empID, String empName, String DateHired, String BirthDate, float totalHoursWorked, float ratePerHour) {
         this.empID = empID;
         this.empName = empName;
-        this.empDateHired = empDateHired;
-        this.empBirthDate = empBirthDate;
+        empHiredDate.arrangeHiredDate(DateHired);
+        empBirthDate.arrangeBirthDate(BirthDate);
         this.totalHoursWorked = totalHoursWorked; 
         this.ratePerHour = ratePerHour; //76.25/hr
     }
@@ -55,22 +57,6 @@ public class HourlyEmployee {
         this.empName = empName;
     }
 
-    public String getEmpDateHired() {
-        return empDateHired;
-    }
-
-    public void setEmpDateHired(String empDateHired) {
-        this.empDateHired = empDateHired;
-    }
-
-    public String getEmpBirthDate() {
-        return empBirthDate;
-    }
-
-    public void setEmpBirthDate(String empBirthDate) {
-        this.empBirthDate = empBirthDate;
-    }
-
     public float getTotalHoursWorked() {
         return totalHoursWorked;
     }
@@ -87,8 +73,6 @@ public class HourlyEmployee {
         this.ratePerHour = ratePerHour;
     }
     
-    
-    
     public double computeSalary(){
         double excessHoursTotal;
         
@@ -103,17 +87,13 @@ public class HourlyEmployee {
     public void displayInfo(double salary){
         System.out.println("Employee ID: " + this.empID);
         System.out.println("Employee Name: " + this.empName);
-        System.out.println("Date Hired: " + this.empDateHired);
-        System.out.println("Birth Date: " + this.empBirthDate);
+        System.out.println("Date Hired: " + empHiredDate.getEmpHiredDate());
+        System.out.println("Birth Date: " + empBirthDate.getEmpBirthDate());
         System.out.println("Total Hours Worked: " + this.totalHoursWorked);
         System.out.println("Rate Per Hour: " + this.ratePerHour);
         System.out.println("Salary: " + salary);
-    }//display all w/salary
-
-    @Override
-    public String toString() {
-        return "HourlyEmployee{" + "empID=" + empID + ", empName=" + empName + ", empDateHired=" + empDateHired + ", empBirthDate=" + empBirthDate + ", totalHoursWorked=" + totalHoursWorked + ", ratePerHour=" + ratePerHour + '}';
     }
-    
-    
+
+
+      
 }
