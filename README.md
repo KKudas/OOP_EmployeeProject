@@ -2,38 +2,118 @@
 <b>Package: </b> employee.version1 <br />
 
 <h2>HourlyEmployee</h2>
+<h3>Instance variables:</h3>
 <ul>
   <li>empID: int</li>
+  <li>empName: String</li>
+  <li>empDateHired: Date</li>
+  <li>empBirthDate: Date</li>
+  <li>totalHoursWorked: float</li>
+  <li>ratePerHour: float</li>
 </ul>
-- empName: String <br />
-- empDateHired: Date <br />
-- empBirthDate: Date <br />
-- totalHoursWorked: float <br />
-- ratePerHour: float <br />
-Create and overload constructors at least 3 <br />
-Accessors and mutators<br />
-- computeSalary(): double <br />
-  - computes the salary based on a weekly work hours. An employee normally works 8hrs a day 5 times a week. Excess hours is considered as an overtime which will have 150% rate <br />
-- displayInfo(): void <br />
-  - show all details above w/salary<br />
-- override toString() <br />
-  - returns the string information of the employee only <br /><br />
+<p>Create and overload constructors at least 3</p>
+<p>Accessors and mutators (Setters and Getters)</p>
+<h3>Methods:</h3>
+<ul>
+  <li>
+    <b>computeSalary(): double </b><br />
+    Computes the salary based on weekly work hours. An employee normally works 8hrs a day 5 times a week. Excess hours are considered overtime which will have a 150% rate.
+  </li>
+  <li> 
+    <b>displayInfo(): void </b><br />
+    Show all details above w/salary
+  </li>
+  <li>
+    <b>override toString()</b><br />
+    Returns the string information of the employee only <br /><br />
+  </li>
+</ul>
 
 <h2>PieceWorkerEmployee</h2> 
-- empID: int <br />
-- empName: String <br />
-- empDateHired: Date <br />
-- empBirthDate: Date <br />
+<h3>Instance variables:</h3>
+<ul>
+  <li>empID: int</li>
+  <li>empName: String</li>
+  <li>empDateHired: Date</li>
+  <li>empBirthDate: Date</li>
+  <li>totalPiecesFinished: float</li>
+  <li>ratePerPieace: float</li>
+</ul>
+<p>Create and overload constructors at least 3</p>
+<p>Accessors and mutators (Setters and Getters)</p>
+<h3>Methods:</h3>
+<ul>
+  <li>
+    <b>computeSalary(): double </b><br />
+    Computes the salary based on the total pieces finished times the rate. A bonus is given for every hundred pieces finished which is time 10 of the rater per piece.
+  </li>
+  <li> 
+    <b>displayInfo(): void </b><br />
+    Show all details above w/salary
+  </li>
+  <li>
+    <b>override toString()</b><br />
+    Returns the string information of the employee only <br /><br />
+  </li>
+</ul>
 
 <h2>CommissionEmployee</h2>
+<h3>Instance variables:</h3>
+<ul>
+  <li>empID: int</li>
+  <li>empName: String</li>
+  <li>empDateHired: Date</li>
+  <li>empBirthDate: Date</li>
+  <li>totalSales: double</li>
+</ul>
+<p>Create and overload constructors at least 3</p>
+<p>Accessors and mutators (Setters and Getters)</p>
+<h3>Methods:</h3>
+<ul>
+  <li>
+    <b>computeSalary(): double </b><br />
+    Computes the salary based on commission.
+    <ol>
+      <li>Low Sales: For every < 50K. Get 5% of the sales</li>
+      <li>Typical Sales: For every >=50K. Get 20% of the sales</li>
+      <li>Typical Sales: For every >=100. Get 30% of the sales</li>
+      <li>High Sales: For every >=0.5M. Get 50% of the sales</li>
+    </ol>
+  </li>
+  <li> 
+    <b>displayInfo(): void </b><br />
+    Show all details above w/salary
+  </li>
+  <li>
+    <b>override toString()</b><br />
+    Returns the string information of the employee only <br /><br />
+  </li>
+</ul>
 
 <h2>BasePlusCommissionEmployee</h2>
-
-<h2>TestMain</h2>
-
-Read this! Possible solution of bug:
-Exception in thread "main" java.time.format.DateTimeParseException: Text '02-10-2003' could not be parsed at index 0
-https://javahungry.blogspot.com/2022/12/java-time-format-datetimeparseexception-text-could-not-be-parsed-at-index.html
-
-Why?
-LocalDateTime will asks for date and time while our code didn't include time thus try to fix it!
+<h3>Instance variables:</h3>
+<ul>
+  <li>empID: int</li>
+  <li>empName: String</li>
+  <li>empDateHired: Date</li>
+  <li>empBirthDate: Date</li>
+  <li>totalSales: double</li>
+  <li>baseSalary: double</li>
+</ul>
+<p>Create and overload constructors at least 3</p>
+<p>Accessors and mutators (Setters and Getters)</p>
+<h3>Methods:</h3>
+<ul>
+  <li>
+    <b>computeSalary(): double </b><br />
+    Computes the salary based on adding the commission on sales plus the base salary
+  </li>
+  <li> 
+    <b>displayInfo(): void </b><br />
+    Show all details above w/salary
+  </li>
+  <li>
+    <b>override toString()</b><br />
+    Returns the string information of the employee only <br /><br />
+  </li>
+</ul>
