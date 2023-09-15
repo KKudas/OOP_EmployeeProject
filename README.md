@@ -28,3 +28,10 @@ Accessors and mutators<br />
 <h2>BasePlusCommissionEmployee</h2>
 
 <h2>TestMain</h2>
+
+Read this! Possible solution of bug:
+Exception in thread "main" java.time.format.DateTimeParseException: Text '02-10-2003' could not be parsed at index 0
+https://javahungry.blogspot.com/2022/12/java-time-format-datetimeparseexception-text-could-not-be-parsed-at-index.html
+
+Why?
+LocalDateTime will asks for date and time while our code didn't include time thus try to fix it!
