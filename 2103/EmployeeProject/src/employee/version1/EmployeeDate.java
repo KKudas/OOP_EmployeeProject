@@ -6,6 +6,7 @@
 package employee.version1;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 /**
  *
@@ -40,14 +41,14 @@ public class EmployeeDate {
     }
     
     public void arrangeBirthDate(String birthStr){
-        LocalDate birth = LocalDate.parse(birthStr);
-        DateTimeFormatter doformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter doformat = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.US);
+        LocalDate birth = LocalDate.parse(birthStr, doformat);
         this.empBirthDate = doformat.format(birth);
     }
     
     public void arrangeHiredDate(String hiredStr){
-        LocalDate hired = LocalDate.parse(hiredStr);
-        DateTimeFormatter doformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter doformat = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.US);
+        LocalDate hired = LocalDate.parse(hiredStr, doformat);
         this.empHiredDate = doformat.format(hired);
     }
 }
