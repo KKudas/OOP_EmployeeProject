@@ -86,5 +86,15 @@ public class CommissionEmployee {
         System.out.println("Total Sales: " + this.totalSales);
         System.out.println("Salary: " + salary);
     }
-   
+
+    @Override
+    public String toString() {
+        return "CommissionEmployee{" +
+                "empID=" + empID +
+                ", empName='" + empName + '\'' +
+                ", empBirthDate=" + empBirthDate.getEmpBirthDate() +
+                ", empHiredDate=" + empHiredDate.getEmpHiredDate() +
+                ", totalSales=" + totalSales +
+                '}';
+    }
 }

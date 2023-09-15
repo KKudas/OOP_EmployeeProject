@@ -88,7 +88,16 @@ public class PieceWorkerEmployee {
         System.out.println("Rate Per Hour: " + this.ratePerPiece);
         System.out.println("Salary: " + salary);
     }
-    
 
-        
+    @Override
+    public String toString() {
+        return "PieceWorkerEmployee{" +
+                "empID=" + empID +
+                ", empName='" + empName + '\'' +
+                ", empBirthDate=" + empBirthDate +
+                ", empHiredDate=" + empHiredDate +
+                ", totalPiecesFinished=" + totalPiecesFinished +
+                ", ratePerPiece=" + ratePerPiece +
+                '}';
+    }
 }

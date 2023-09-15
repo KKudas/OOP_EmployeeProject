@@ -94,6 +94,15 @@ public class HourlyEmployee {
         System.out.println("Salary: " + salary);
     }
 
-
-      
+    @Override
+    public String toString() {
+        return "HourlyEmployee{" +
+                "empID=" + empID +
+                ", empName='" + empName + '\'' +
+                ", empBirthDate=" + empBirthDate.getEmpBirthDate() +
+                ", empHiredDate=" + empHiredDate.getEmpHiredDate() +
+                ", totalHoursWorked=" + totalHoursWorked +
+                ", ratePerHour=" + ratePerHour +
+                '}';
+    }
 }

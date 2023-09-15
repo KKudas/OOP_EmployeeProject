@@ -88,12 +88,22 @@ public class BasePlusCommisionEmployee {
     public void displayInfo(double salary){
         System.out.println("Employee ID: " + this.empID);
         System.out.println("Employee Name: " + this.empName);
-        System.out.println("Date Hired: " + empBirthDate.getEmpHiredDate());
-        System.out.println("Birth Date: " + empHiredDate.getEmpBirthDate());
+        System.out.println("Date Hired: " + empHiredDate.getEmpHiredDate());
+        System.out.println("Birth Date: " + empBirthDate.getEmpBirthDate());
         System.out.println("Total Salary: " + this.totalSales);
         System.out.println("Base Salary: " + this.baseSalary);
         System.out.println("Salary: " + salary);
     }
-    
 
+    @Override
+    public String toString() {
+        return "BasePlusCommisionEmployee{" +
+                "empID=" + empID +
+                ", empName='" + empName + '\'' +
+                ", totalSales=" + totalSales +
+                ", baseSalary=" + baseSalary +
+                ", empBirthDate=" + empBirthDate.getEmpBirthDate() +
+                ", empHiredDate=" + empHiredDate.getEmpHiredDate() +
+                '}';
+    }
 }

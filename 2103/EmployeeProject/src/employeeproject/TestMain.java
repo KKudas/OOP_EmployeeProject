@@ -23,13 +23,13 @@ public class TestMain {
         HourlyEmployee employee1 = new HourlyEmployee(12, "Ralph Mandigma", "02-10-2003", "10-02-2020", 35, 76.25F);
         PieceWorkerEmployee employee2 = new PieceWorkerEmployee(14, "Miguel Mandigma", "01-10-2011", "02-02-2022", 200, 76.25F);
         CommissionEmployee employee3 = new CommissionEmployee(16, "Rapahel Dela Rosa", "02-10-2021", "03-05-2023", 12000);
-        BasePlusCommisionEmployee employee4 = new BasePlusCommisionEmployee(16, "Michael Dela Rosa", "02-02-2011", "06-04-2015", 5000, 12000);  
+        BasePlusCommisionEmployee employee4 = new BasePlusCommisionEmployee(16, "Michael Dela Rosa", "02-02-2011", "06-04-2015", 5000, 12000);
         
         double salaryOfEmployee1 = employee1.computeSalary();
         System.out.println(employee1.getEmpName() + " Salary is: " + salaryOfEmployee1);
         employee1.displayInfo(salaryOfEmployee1);
         System.out.printf("\n");
-        
+
         double salaryOfEmployee2 = employee2.computeSalary();
         System.out.println(employee2.getEmpName() + " Salary is: " + salaryOfEmployee2);
         employee2.displayInfo(salaryOfEmployee2);
